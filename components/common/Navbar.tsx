@@ -4,6 +4,7 @@ import React from "react";
 import { BlocksIcon } from "../animate-ui/icons/blocks";
 import { AnimateIcon } from "../animate-ui/icons/icon";
 import { PaperclipIcon } from "../animate-ui/icons/paperclip";
+import GithubStars from "../github-stars";
 import { ModeToggle as Themetoggle } from "../toggle-theme";
 
 interface nav_items {
@@ -27,7 +28,7 @@ const nav_config: nav_items[] = [
 
 const Navbar = () => {
   return (
-    <nav className="max-w-3xl mx-auto px-4 container flex justify-between items-center py-2">
+    <nav className="max-w-3xl mx-auto px-4 container flex justify-between items-center py-2 border-b">
       <div className="flex items-center justify-center space-x-8">
         <Link href={"/"}>
           <Image
@@ -53,7 +54,7 @@ const Navbar = () => {
         })}
       </div>
       <div className="flex items-center justify-center space-x-4">
-        <p>Github starts for this repo</p>
+        <GithubStars />
         <Themetoggle />
       </div>
     </nav>
