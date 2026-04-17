@@ -2,26 +2,36 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-import { BlocksIcon, PaperclipIcon } from "lucide-react";
 import GithubStars from "../github-stars";
 import { ModeToggle as Themetoggle } from "../toggle-theme";
+import LottieIcon from "./LottieIcon";
+import fileData from "../../lottie/file.json";
+import folderData from "../../lottie/folder.json";
+
+interface IconProps {
+  className?: string;
+}
 
 interface nav_items {
   title: string;
   href: string;
-  icon: React.ElementType;
+  icon: React.ComponentType<IconProps>;
 }
 
 const nav_config: nav_items[] = [
   {
     title: "Projects",
     href: "/projects",
-    icon: BlocksIcon,
+    icon: (props: IconProps) => (
+      <LottieIcon animationData={folderData} {...props} />
+    ),
   },
   {
     title: "Resume",
     href: "/resume",
-    icon: PaperclipIcon,
+    icon: (props: IconProps) => (
+      <LottieIcon animationData={fileData} {...props} />
+    ),
   },
 ];
 
@@ -43,10 +53,11 @@ const Navbar = () => {
           const Icon = item.icon;
           return (
             <Link
+              key={item.href}
               className="flex items-center justify-center gap-2 group"
               href={item.href}
             >
-              <Icon className={"size-4"} />{" "}
+              <Icon className={"size-5"} />{" "}
               <p className="text-sm">{item.title}</p>
             </Link>
           );
