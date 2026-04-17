@@ -3,7 +3,7 @@ import Container from "@/components/common/Container";
 const page = () => {
   return (
     <Container>
-      <div className="w-full">Home</div>
+      <div>Projects</div>
     </Container>
   );
 };
