@@ -1,12 +1,20 @@
 import getStarCount from "@/lib/github";
-import { GithubIcon } from "./ui/github-icon";
+import { AnimateIcon } from "./animate-ui/icons/icon";
+import { StarIcon } from "./animate-ui/icons/star";
 
 const GithubStars = async () => {
   const star_count = await getStarCount();
   return (
-    <div className="flex items-center justify-center space-x-1">
-      <GithubIcon size={16} /> <p>{star_count}</p>
-    </div>
+    <AnimateIcon asChild animateOnHover>
+      <a
+        href="https://github.com/0dux/portfolio-website"
+        target="_blank"
+        className="flex items-center justify-center space-x-1"
+      >
+        <StarIcon animation="fill" size={16} />{" "}
+        <p className="text-sm">{star_count}</p>
+      </a>
+    </AnimateIcon>
   );
 };
 

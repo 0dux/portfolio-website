@@ -14,15 +14,18 @@ export function ModeToggle() {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return <div className="size-4" />;
-  }
+  const switchThemeTo = currentTheme === "light" ? "dark" : "light";
 
-  const switchThemeTo = currentTheme == "light" ? "dark" : "light";
   return (
     <AnimateIcon asChild animateOnHover>
-      <button className="p-2" onClick={() => setTheme(switchThemeTo)}>
-        {currentTheme == "light" ? (
+      <button
+        className="p-2 focus:outline-none"
+        onClick={() => setTheme(switchThemeTo)}
+        aria-label="Toggle theme"
+      >
+        {!mounted ? (
+          <div className="size-4" />
+        ) : currentTheme === "light" ? (
           <SunIcon size={16} />
         ) : (
           <MoonIcon size={16} />
