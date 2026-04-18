@@ -108,9 +108,10 @@ const Hero = () => {
                 <Hint label={item.label} side="top">
                   <a
                     href={item.href}
-                    {...(item.label !== "Resume" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    {...(item.label !== "Resume"
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
                     aria-label={item.label}
-
                     className="flex items-center justify-center size-9 rounded-full border border-border transition-[transform,background-color] duration-150 ease-out hover:bg-muted hover:scale-110 active:scale-97"
                   >
                     <HugeiconsIcon
@@ -147,13 +148,13 @@ const Hero = () => {
           className="mt-5 text-base leading-relaxed text-foreground/80 w-full font-sans"
         >
           <strong className="text-foreground font-semibold">
-            I build from zero.
+            Curiosity is my compiler.
           </strong>{" "}
-          Whether it&apos;s frontend, backend, full-stack applications, or
-          AI-powered experiences, I work across the entire development
-          lifecycle. From UI/UX to deployment to user feedback, I care less
-          about technology debates and more about delivering results that people
-          love using.
+          I genuinely enjoy the process of turning an idea into something real
+          &mdash; designing interfaces, writing APIs, and connecting every layer
+          in between. The stack is just a tool; what excites me is crafting
+          experiences that feel thoughtful and effortless to the people who use
+          them.
         </motion.p>
       </div>
     </motion.main>

@@ -51,7 +51,7 @@ const Projects = () => {
             className="w-full text-muted-foreground font-sans leading-relaxed"
           >
             A collection of things I've built, ranging from web applications to
-            experimental AI tools and design explorations.
+            AI integrations, and much more.
           </motion.p>
         </div>
 

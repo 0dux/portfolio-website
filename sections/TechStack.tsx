@@ -99,7 +99,7 @@ const TechStack = () => {
           variants={itemVariants}
           className="text-lg leading-snug font-medium text-foreground tracking-tight"
         >
-          I can learn faster while I&apos;m working
+          If it's not here, give me a weekend.
         </motion.p>
       </motion.div>
     </section>

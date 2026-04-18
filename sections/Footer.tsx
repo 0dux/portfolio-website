@@ -55,7 +55,6 @@ const social_links = [
     color: "#4caf50",
     fallbackText: "View my resume",
   },
-
 ];
 
 const CursorFollower = ({ activeLabel }: { activeLabel: string | null }) => {
@@ -157,9 +156,10 @@ const Footer = () => {
           <a
             key={link.label}
             href={link.href}
-            {...(link.label !== "Resume" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            {...(link.label !== "Resume"
+              ? { target: "_blank", rel: "noopener noreferrer" }
+              : {})}
             onMouseEnter={() => setHoveredLabel(link.label)}
-
             onMouseLeave={() => setHoveredLabel(null)}
             className={cn(
               "flex items-center gap-2.5 p-2 rounded-full bg-card border border-border font-medium text-foreground transition-all duration-75 select-none",
