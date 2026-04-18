@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+import fileData from "../../lottie/file.json";
+import folderData from "../../lottie/folder.json";
 import GithubStars from "../github-stars";
 import { ModeToggle as Themetoggle } from "../toggle-theme";
 import LottieIcon from "./LottieIcon";
-import fileData from "../../lottie/file.json";
-import folderData from "../../lottie/folder.json";
 
 interface IconProps {
   className?: string;
@@ -37,7 +37,7 @@ const nav_config: nav_items[] = [
 
 const Navbar = () => {
   return (
-    <nav className="max-w-3xl mx-auto px-4 container flex justify-between items-center py-2 border-b">
+    <nav className="max-w-3xl mx-auto px-4 container flex justify-between items-center py-2">
       <div className="flex items-center justify-center space-x-8">
         <Link href={"/"}>
           <Image

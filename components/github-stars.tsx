@@ -1,10 +1,11 @@
 import getStarCount from "@/lib/github";
 import { GithubIcon } from "./ui/github";
+import { Hint } from "./ui/hint";
 
 const GithubStars = async () => {
   const star_count = await getStarCount();
   return (
-    <>
+    <Hint label={`${star_count} Github Stars`} side="bottom">
       <a
         href="https://github.com/0dux/portfolio-website"
         target="_blank"
@@ -13,7 +14,7 @@ const GithubStars = async () => {
         <GithubIcon size={16} />
         <p>{star_count}</p>
       </a>
-    </>
+    </Hint>
   );
 };
 
