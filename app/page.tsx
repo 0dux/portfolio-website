@@ -4,7 +4,7 @@ import Projects from "@/sections/Projects";
 
 const page = () => {
   return (
-    <Container className="space-y-4">
+    <Container className="space-y-8">
       <Hero />
       <Projects />
     </Container>

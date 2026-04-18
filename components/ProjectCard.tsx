@@ -34,11 +34,9 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      whileHover={{ translateY: -4 }}
-      transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }} // var(--ease-out)
-      className="group relative flex flex-col gap-4 rounded-3xl border border-border bg-card p-4 shadow-sm transition-shadow hover:shadow-md"
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
+      className="group relative flex flex-col gap-4 rounded-3xl border border-border bg-card p-4 shadow-sm transition-[shadow,background-color] hover:shadow-md"
     >
       {/* Image Section */}
       <div
@@ -70,7 +68,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       {/* Content Section */}
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
-          <h3 className="font-serif text-2xl italic tracking-tight text-foreground">
+          <h3 className="font-serif text-2xl tracking-tight text-foreground">
             {project.title}
           </h3>
 
@@ -132,7 +130,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           <Link
             href={project.links.github}
             target="_blank"
-            className="flex items-center gap-2 rounded-xl bg-foreground px-4 py-2 text-xs font-medium text-background transition-all hover:opacity-90 active:scale-95 ease-out"
+            className="flex items-center gap-2 rounded-xl bg-foreground px-4 py-2 text-xs font-medium text-background transition-[opacity,transform] hover:opacity-90 active:scale-97 duration-150 ease-out"
           >
             <HugeiconsIcon icon={GithubIcon} size={14} />
             GitHub
@@ -142,7 +140,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           <Link
             href={project.links.live}
             target="_blank"
-            className="flex items-center gap-2 rounded-xl border border-border px-4 py-2 text-xs font-medium text-foreground transition-all hover:bg-muted active:scale-95 ease-out"
+            className="flex items-center gap-2 rounded-xl border border-border px-4 py-2 text-xs font-medium text-foreground transition-[background-color,transform] hover:bg-muted active:scale-97 duration-150 ease-out"
           >
             Live Demo
             <HugeiconsIcon icon={ArrowUpRight01Icon} size={14} />
@@ -152,7 +150,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           <Link
             href={project.links.demo}
             target="_blank"
-            className="flex items-center gap-2 rounded-xl border border-border px-4 py-2 text-xs font-medium text-foreground transition-all hover:bg-muted active:scale-95 ease-out"
+            className="flex items-center gap-2 rounded-xl border border-border px-4 py-2 text-xs font-medium text-foreground transition-[background-color,transform] hover:bg-muted active:scale-97 duration-150 ease-out"
           >
             Demo
             <HugeiconsIcon icon={PlayIcon} size={14} />

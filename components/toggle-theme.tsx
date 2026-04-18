@@ -4,20 +4,15 @@ import { Hint } from "@/components/ui/hint";
 import { MoonIcon, Sun02Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { flushSync } from "react-dom";
 
 export function ModeToggle() {
   const [mounted, setMounted] = useState(false);
   const { theme: currentTheme, setTheme } = useTheme();
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const switchThemeTo = currentTheme === "light" ? "dark" : "light";
-
-  const handleThemeChange = () => {
+  const handleThemeChange = useCallback(() => {
+    const switchThemeTo = currentTheme === "light" ? "dark" : "light";
     const doc = document as any;
     if (!doc.startViewTransition) {
       setTheme(switchThemeTo);
@@ -29,7 +24,26 @@ export function ModeToggle() {
         setTheme(switchThemeTo);
       });
     });
-  };
+  }, [currentTheme, setTheme]);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (
+        e.key.toLowerCase() === "d" &&
+        !["INPUT", "TEXTAREA"].includes((e.target as HTMLElement).tagName) &&
+        !(e.target as HTMLElement).isContentEditable
+      ) {
+        handleThemeChange();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [handleThemeChange]);
 
   return (
     <Hint label="Toggle Theme" shortcut="D" side="bottom">
