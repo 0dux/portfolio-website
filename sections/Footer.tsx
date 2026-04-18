@@ -50,11 +50,12 @@ const social_links = [
   },
   {
     label: "Resume",
-    href: "https://drive.google.com/file/d/18JVlxWCY4oOeUE1_qD1YHyyxL8rnlFl2/view?usp=sharing",
+    href: "/resume",
     icon: Link01Icon,
     color: "#4caf50",
     fallbackText: "View my resume",
   },
+
 ];
 
 const CursorFollower = ({ activeLabel }: { activeLabel: string | null }) => {
@@ -156,9 +157,9 @@ const Footer = () => {
           <a
             key={link.label}
             href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...(link.label !== "Resume" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
             onMouseEnter={() => setHoveredLabel(link.label)}
+
             onMouseLeave={() => setHoveredLabel(null)}
             className={cn(
               "flex items-center gap-2.5 p-2 rounded-full bg-card border border-border font-medium text-foreground transition-all duration-75 select-none",
