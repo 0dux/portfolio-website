@@ -70,7 +70,7 @@ const Hero = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="mt-1 relative"
+      className="mt-1 relative py-8"
     >
       {/* Header Banner */}
       <motion.div
