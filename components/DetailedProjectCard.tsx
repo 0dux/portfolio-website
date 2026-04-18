@@ -10,7 +10,7 @@ import {
   PlayIcon,
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
+import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
@@ -22,7 +22,8 @@ interface DetailedProjectCardProps {
 
 const getYouTubeEmbedUrl = (url: string) => {
   if (!url) return null;
-  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const regExp =
+    /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
   const match = url.match(regExp);
   const id = match && match[2].length === 11 ? match[2] : null;
   if (!id) return null;
@@ -33,7 +34,9 @@ const DetailedProjectCard = ({ project, index }: DetailedProjectCardProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isHovering, setIsHovering] = useState(false);
   const isAlt = index % 2 !== 0;
-  const embedUrl = project.links.demo ? getYouTubeEmbedUrl(project.links.demo) : null;
+  const embedUrl = project.links.demo
+    ? getYouTubeEmbedUrl(project.links.demo)
+    : null;
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -60,14 +63,14 @@ const DetailedProjectCard = ({ project, index }: DetailedProjectCardProps) => {
       ref={containerRef}
       className={cn(
         "group relative flex flex-col gap-8 md:flex-row md:items-center py-12 md:py-20",
-        isAlt && "md:flex-row-reverse"
+        isAlt && "md:flex-row-reverse",
       )}
     >
       {/* Decorative Index Number */}
       <span
         className={cn(
           "absolute -top-4 left-0 font-serif text-[120px] font-bold leading-none text-muted/10 pointer-events-none select-none",
-          isAlt ? "md:left-auto md:right-0" : "md:left-0"
+          isAlt ? "md:left-auto md:right-0" : "md:left-0",
         )}
       >
         0{index + 1}
@@ -111,7 +114,7 @@ const DetailedProjectCard = ({ project, index }: DetailedProjectCardProps) => {
                   >
                     <iframe
                       src={embedUrl}
-                      className="h-full w-full object-cover scale-[1.02]"
+                      className="h-full w-full object-cover relative scale-[1.02]"
                       allow="autoplay; encrypted-media"
                       allowFullScreen
                     />
@@ -134,17 +137,21 @@ const DetailedProjectCard = ({ project, index }: DetailedProjectCardProps) => {
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent pointer-events-none" />
-                    
+
                     {/* Play Icon on Hover - Indicator that it's playable */}
                     {embedUrl && (
-                      <motion.div 
+                      <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileHover={{ opacity: 1, scale: 1 }}
                         className="absolute inset-0 flex items-center justify-center bg-black/10 backdrop-blur-[2px] transition-all duration-300"
                       >
-                         <div className="rounded-full bg-white/20 backdrop-blur-xl p-6 text-white border border-white/30 shadow-2xl">
-                            <HugeiconsIcon icon={PlayIcon} size={32} fill="currentColor" />
-                         </div>
+                        <div className="rounded-full bg-white/20 backdrop-blur-xl p-6 text-white border border-white/30 shadow-2xl">
+                          <HugeiconsIcon
+                            icon={PlayIcon}
+                            size={32}
+                            fill="currentColor"
+                          />
+                        </div>
                       </motion.div>
                     )}
                   </motion.div>
@@ -155,12 +162,11 @@ const DetailedProjectCard = ({ project, index }: DetailedProjectCardProps) => {
         </div>
       </motion.div>
 
-
       {/* Content Section */}
       <div
         className={cn(
-          "flex flex-col gap-6 w-full md:w-[45%]",
-          isAlt ? "md:pr-12" : "md:pl-12"
+          "relative flex flex-col gap-6 w-full md:w-[45%]",
+          isAlt ? "md:pr-12" : "md:pl-12",
         )}
       >
         <div className="space-y-3">
@@ -174,7 +180,7 @@ const DetailedProjectCard = ({ project, index }: DetailedProjectCardProps) => {
                   "size-1.5 rounded-full",
                   project.status === "operational"
                     ? "bg-green-500 animate-status-pulse"
-                    : "bg-red-500"
+                    : "bg-red-500",
                 )}
               />
               {project.status === "operational" ? "Active" : "Down"}
@@ -192,7 +198,7 @@ const DetailedProjectCard = ({ project, index }: DetailedProjectCardProps) => {
               className={cn(
                 project.progress === "completed"
                   ? "text-green-500"
-                  : "text-amber-500"
+                  : "text-amber-500",
               )}
             />
             <span className="capitalize">{project.progress}</span>

@@ -29,13 +29,13 @@ const itemVariants = {
 
 const page = () => {
   return (
-    <section className="py-12 px-12 md:py-24" id="projects-detailed">
+    <section className="relative py-12 px-12 md:py-24" id="projects-detailed">
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
-        className="flex flex-col gap-12 md:gap-24"
+        className="relative flex flex-col gap-12 md:gap-24"
       >
         {/* Section Header */}
         <div className="space-y-4 max-w-3xl">
@@ -58,7 +58,11 @@ const page = () => {
         {/* Projects List */}
         <div className="flex flex-col border-t border-border/40 divide-y divide-border/40">
           {projectsDetailed.map((project, index) => (
-            <motion.div key={project.id} variants={itemVariants}>
+            <motion.div
+              key={project.id}
+              variants={itemVariants}
+              className="relative"
+            >
               <DetailedProjectCard project={project} index={index} />
             </motion.div>
           ))}

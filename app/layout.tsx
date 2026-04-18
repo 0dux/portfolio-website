@@ -43,7 +43,10 @@ export default function RootLayout({
         fontMono.variable,
       )}
     >
-      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+      <body
+        className="relative min-h-full flex flex-col"
+        suppressHydrationWarning
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
