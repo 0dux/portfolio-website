@@ -71,3 +71,87 @@ export const projects: Project[] = [
     },
   },
 ];
+
+export const projectsDetailed: Project[] = [
+  {
+    id: "1",
+    title: "FrameGen",
+    description:
+      "An AI-powered YouTube thumbnail generator for content creators. Enter a video title, select a style, aspect ratio, and color palette to generate professional thumbnails using Google Gemini AI. Features Google OAuth 2.0, a credits system, save & manage generations, and a community gallery.",
+    progress: "completed",
+    status: "operational",
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Express",
+      "MongoDB",
+      "Cloudinary",
+      "Google Gemini AI",
+      "Shadcn/ui",
+    ],
+    image: ProjectAssets.frame_gen,
+    links: {
+      github: "https://github.com/0dux/FrameGen",
+      live: "https://frame-gen.dxksh.tech",
+      demo: "https://www.youtube.com/embed/lXogiTmWDvY?si=sF9zVXSI1MVI9AHz",
+    },
+  },
+  {
+    id: "2",
+    title: "Flux",
+    description:
+      "An AI-powered website builder that generates complete, functional websites from natural language prompts. Features a conversational interface for iterative refinement, live preview across device sizes, version history with one-click rollback, credit system, and a community marketplace.",
+    progress: "completed",
+    status: "operational",
+    techStack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Shadcn/ui",
+      "Express",
+      "PostgreSQL",
+      "Prisma",
+      "Better-Auth",
+      "Gemini-3-Flash",
+    ],
+    image: ProjectAssets.flux,
+    links: {
+      github: "https://github.com/0dux/Flux-Website-Builder",
+      live: "https://flux.dxksh.tech",
+      demo: "https://www.youtube.com/embed/HOjH3C0DaaQ?si=B2R4G7uyGvOqpBdW",
+    },
+  },
+  {
+    id: "3",
+    title: "Whispry",
+    description:
+      "A fast, minimal full-stack real-time chat application with instant text and image messaging powered by Socket.IO. Features online presence tracking, JWT-based authentication, profile picture uploads via Cloudinary, transactional welcome emails via Resend, and rate limiting with Arcjet.",
+    progress: "completed",
+    status: "operational",
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Socket.IO",
+      "Express",
+      "PostgreSQL",
+      "Prisma",
+      "Cloudinary",
+      "Resend",
+      "Arcjet",
+      "Zustand",
+      "Framer Motion",
+    ],
+    image: ProjectAssets.whispry,
+    links: {
+      github: "https://github.com/0dux/Whispry",
+      live: "https://whispry.dxksh.tech",
+      demo: "https://www.youtube.com/embed/vFP2gQr6Gvg?si=W--l4WxxQfR1KmR_",
+    },
+  },
+];

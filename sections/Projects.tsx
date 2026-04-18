@@ -30,7 +30,7 @@ const itemVariants = {
 
 const Projects = () => {
   return (
-    <section className="py-8" id="projects">
+    <section className="py-8" id="projects-detailed">
       <motion.div
         initial="hidden"
         whileInView="visible"
