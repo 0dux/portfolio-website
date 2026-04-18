@@ -5,6 +5,7 @@ const page = () => {
   return (
     <Container>
       <Hero />
+      
     </Container>
   );
 };

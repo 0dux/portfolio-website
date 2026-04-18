@@ -1,3 +1,4 @@
+import Container from "./Container";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -37,38 +38,40 @@ const nav_config: nav_items[] = [
 
 const Navbar = () => {
   return (
-    <nav className="max-w-3xl mx-auto px-4 container flex justify-between items-center py-2">
-      <div className="flex items-center justify-center space-x-8">
-        <Link href={"/"}>
-          <Image
-            loading="eager"
-            className="rounded-full h-10 w-10 border border-gray-200 hover:scale-90 ease-in-out transition-all duration-300"
-            src={"/assets/nav_logo.jpg"}
-            width={100}
-            height={100}
-            alt="Home"
-          />
-        </Link>
-        {nav_config.map((item) => {
-          const Icon = item.icon;
-          return (
-            <Link
-              key={item.href}
-              className="flex items-center justify-center gap-2 group"
-              href={item.href}
-            >
-              <Icon className={"size-5"} />{" "}
-              <p className="text-sm">{item.title}</p>
-            </Link>
-          );
-        })}
-      </div>
-      <div className="flex items-center justify-center space-x-4">
-        <React.Suspense fallback={<div className="w-10 h-5" />}>
-          <GithubStars />
-        </React.Suspense>
-        <Themetoggle />
-      </div>
+    <nav className="sticky top-0 z-50 w-full backdrop-blur-md">
+      <Container className="flex justify-between items-center py-2">
+        <div className="flex items-center justify-center space-x-8">
+          <Link href={"/"}>
+            <Image
+              loading="eager"
+              className="rounded-full h-10 w-10 border border-border shadow-sm hover:scale-105 active:scale-95 transition-transform duration-150 [transition-timing-function:var(--ease-out)]"
+              src={"/assets/nav_logo.jpg"}
+              width={100}
+              height={100}
+              alt="Home"
+            />
+          </Link>
+          {nav_config.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.href}
+                className="flex items-center justify-center gap-2 group transition-all duration-200 active:scale-95 [transition-timing-function:var(--ease-out)] hover:text-primary"
+                href={item.href}
+              >
+                <Icon className={"size-5 transition-transform group-hover:scale-110 duration-200 [transition-timing-function:var(--ease-out)]"} />{" "}
+                <p className="text-sm font-medium">{item.title}</p>
+              </Link>
+            );
+          })}
+        </div>
+        <div className="flex items-center justify-center space-x-4">
+          <React.Suspense fallback={<div className="w-10 h-5" />}>
+            <GithubStars />
+          </React.Suspense>
+          <Themetoggle />
+        </div>
+      </Container>
     </nav>
   );
 };

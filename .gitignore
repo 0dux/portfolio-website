@@ -42,3 +42,7 @@ next-env.d.ts
 
 # local learning notes
 development-*
+
+#agent skills
+.agents/
+skills-*

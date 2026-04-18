@@ -34,7 +34,7 @@ export function ModeToggle() {
   return (
     <Hint label="Toggle Theme" shortcut="D" side="bottom">
       <button
-        className="p-2 cursor-pointer focus:outline-none relative group flex items-center justify-center"
+        className="p-2 cursor-pointer focus:outline-none relative group flex items-center justify-center transition-transform active:scale-90 duration-150 ease-out"
         onClick={handleThemeChange}
         aria-label="Toggle theme"
       >
@@ -43,13 +43,13 @@ export function ModeToggle() {
         ) : currentTheme === "light" ? (
           <HugeiconsIcon
             icon={Sun02Icon}
-            className="group-hover:rotate-180 transition-transform duration-500"
+            className="group-hover:rotate-180 transition-transform duration-200 ease-out"
             size={16}
           />
         ) : (
           <HugeiconsIcon
             icon={MoonIcon}
-            className="group-hover:rotate-12 transition-transform duration-500"
+            className="group-hover:rotate-12 transition-transform duration-200 ease-out"
             size={16}
           />
         )}

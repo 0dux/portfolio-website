@@ -9,7 +9,7 @@ const GithubStars = async () => {
       <a
         href="https://github.com/0dux/portfolio-website"
         target="_blank"
-        className="flex items-center justify-center space-x-1 group"
+        className="flex items-center justify-center space-x-1 group transition-transform active:scale-95 duration-150 ease-out"
       >
         <GithubIcon size={16} />
         <p>{star_count}</p>

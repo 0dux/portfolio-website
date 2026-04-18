@@ -46,10 +46,13 @@ export const Hint = ({
               y: side === "top" ? 5 : -5,
               x: "-50%",
             }}
-            transition={{ duration: 0.15, ease: "easeOut" }}
+            transition={{ duration: 0.12, ease: [0.23, 1, 0.32, 1] }} // var(--ease-out)
+            style={{ 
+              transformOrigin: side === "top" ? "bottom center" : "top center" 
+            }}
             className={cn(
-              "absolute left-1/2 z-50 whitespace-nowrap px-3 py-1.5 rounded-2xl text-[11px] font-medium shadow-2xl pointer-events-none",
-              "bg-slate-900 text-slate-100 dark:bg-slate-100 dark:text-slate-900",
+              "absolute left-1/2 z-50 whitespace-nowrap px-3 py-1.5 rounded-xl text-[11px] font-medium shadow-md pointer-events-none",
+              "bg-foreground text-background",
               side === "top" ? "bottom-full mb-3" : "top-full mt-3",
               className,
             )}
@@ -57,7 +60,7 @@ export const Hint = ({
             <div className="flex items-center gap-2">
               <span className="tracking-tight">{label}</span>
               {shortcut && (
-                <span className="text-[9px] opacity-50 bg-white/10 dark:bg-black/10 px-1.5 py-0.5 rounded-lg font-mono">
+                <span className="text-[9px] text-background/60 bg-background/20 px-1.5 py-0.5 rounded-md font-mono border border-background/10">
                   {shortcut}
                 </span>
               )}
@@ -67,7 +70,7 @@ export const Hint = ({
             <div
               className={cn(
                 "absolute left-1/2 -translate-x-1/2 w-2 h-2 rotate-45 -z-10",
-                "bg-slate-900 dark:bg-slate-100",
+                "bg-foreground",
                 side === "top" ? "-bottom-1" : "-top-1",
               )}
             />
