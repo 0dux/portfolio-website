@@ -110,7 +110,7 @@ const Hero = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={item.label}
-                    className="flex items-center justify-center size-9 rounded-full border border-border transition-[transform,background-color] duration-150 [transition-timing-function:var(--ease-out)] hover:bg-muted hover:scale-110 active:scale-97"
+                    className="flex items-center justify-center size-9 rounded-full border border-border transition-[transform,background-color] duration-150 ease-out hover:bg-muted hover:scale-110 active:scale-97"
                   >
                     <HugeiconsIcon
                       icon={item.icon}
