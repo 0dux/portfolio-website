@@ -21,6 +21,9 @@ const fontMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/assets/nav_logo.jpg",
+  },
   title: "Daksh Yadav — Engineer & Developer",
   description:
     "Portfolio of Daksh Yadav — a full-stack engineer who ships fast, thinks in systems, and cares about delivering results. Frontend, backend, AI, and everything in between.",
