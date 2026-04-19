@@ -1,18 +1,15 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import {
-  ArrowLeft02Icon,
-  Download02Icon,
-} from "@hugeicons/core-free-icons";
+import { ArrowLeft02Icon, Download02Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { motion } from "motion/react";
 import Link from "next/link";
-import React from "react";
 
 const ResumePage = () => {
-  const RESUME_URL = "https://drive.google.com/file/d/18JVlxWCY4oOeUE1_qD1YHyyxL8rnlFl2/preview";
-  const DOWNLOAD_URL = "https://drive.google.com/file/d/18JVlxWCY4oOeUE1_qD1YHyyxL8rnlFl2/view?usp=sharing";
+  const RESUME_URL =
+    "https://drive.google.com/file/d/1Fhk3ZxouuUc674ada37SVRjWwwZuCh8g/preview";
+  const DOWNLOAD_URL =
+    "https://drive.google.com/file/d/1Fhk3ZxouuUc674ada37SVRjWwwZuCh8g/view?usp=sharing";
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
@@ -58,7 +55,7 @@ const ResumePage = () => {
         >
           {/* Subtle decorative elements */}
           <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent pointer-events-none" />
-          
+
           <iframe
             src={RESUME_URL}
             className="w-full h-full border-none"
@@ -68,9 +65,9 @@ const ResumePage = () => {
 
           {/* Fallback/Overlay if needed (Google Drive handles its own UI usually) */}
           <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-             <div className="bg-background/50 backdrop-blur-sm px-3 py-1.5 rounded-full border border-border text-[10px] font-mono text-muted-foreground">
-                VIEWING MODE
-             </div>
+            <div className="bg-background/50 backdrop-blur-sm px-3 py-1.5 rounded-full border border-border text-[10px] font-mono text-muted-foreground">
+              VIEWING MODE
+            </div>
           </div>
         </motion.div>
       </main>
@@ -78,7 +75,7 @@ const ResumePage = () => {
       {/* Footer hint */}
       <footer className="py-8 text-center opacity-40">
         <p className="text-[10px] font-mono uppercase tracking-widest">
-            Handcrafted with precision • 2026
+          Handcrafted with precision • 2026
         </p>
       </footer>
     </div>
