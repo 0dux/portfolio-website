@@ -1,7 +1,7 @@
 "use client";
 
 import Magnetic from "@/components/ui/magnetic";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 
 const technologies = [
@@ -22,12 +22,12 @@ const technologies = [
   { name: "Redux", slug: "redux" },
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.05,
+      staggerChildren: 0.02,
       delayChildren: 0.2,
     },
   },

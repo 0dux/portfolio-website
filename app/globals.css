@@ -254,13 +254,21 @@
   }
 }
 
-@layer utilities {
-  .no-scrollbar::-webkit-scrollbar {
+@utility no-scrollbar {
+  &::-webkit-scrollbar {
     display: none;
   }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Target internal GitHub calendar scroll container */
+.react-activity-calendar__scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.react-activity-calendar__scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 

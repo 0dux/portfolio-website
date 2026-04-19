@@ -21,6 +21,8 @@ const fontMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dxksh.tech"),
+
   title: "Daksh Yadav — Engineer & Developer",
   description:
     "Portfolio of Daksh Yadav — a full-stack engineer who ships fast, thinks in systems, and cares about delivering results. Frontend, backend, AI, and everything in between.",
@@ -57,7 +59,7 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       className={cn(
-        "h-full",
+        "relative h-full",
         "antialiased",
         fontSans.variable,
         fontSerif.variable,

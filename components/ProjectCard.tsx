@@ -49,8 +49,8 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         <div className="absolute inset-0 z-0 bg-noise opacity-[0.03] mix-blend-overlay pointer-events-none" />
 
         <motion.div
-          initial={{ y: 30, scale: 0.9 }}
-          whileHover={{ y: 0, scale: 1.05 }}
+          initial={{ y: 10, scale: 0.96 }}
+          whileHover={{ y: 0, scale: 1 }}
           transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
           className="relative h-full w-full z-10"
         >
