@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     description:
       "Full-stack engineer who builds from zero. Frontend to deployment.",
     images: ["/og-image.png"],
-    creator: "@DXKSH_X",
+    creator: "@DXKSH_X", //og image works
   },
 };
 
