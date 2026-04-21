@@ -1,6 +1,6 @@
 "use client";
 
-import { Project } from "@/lib/projects";
+import { Project, projectStatusConfig } from "@/lib/projects";
 import { cn } from "@/lib/utils";
 import {
   ArrowUpRight01Icon,
@@ -34,9 +34,12 @@ const DetailedProjectCard = ({ project, index }: DetailedProjectCardProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isHovering, setIsHovering] = useState(false);
   const isAlt = index % 2 !== 0;
+  const status = projectStatusConfig[project.status];
   const embedUrl = project.links.demo
     ? getYouTubeEmbedUrl(project.links.demo)
     : null;
+
+  console.log(status);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -176,14 +179,9 @@ const DetailedProjectCard = ({ project, index }: DetailedProjectCardProps) => {
             </h3>
             <div className="flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-[10px] font-medium tracking-wide uppercase bg-background/50 backdrop-blur-sm self-start mt-2 md:mt-4">
               <span
-                className={cn(
-                  "size-1.5 rounded-full",
-                  project.status === "operational"
-                    ? "bg-green-500 animate-status-pulse"
-                    : "bg-red-500",
-                )}
+                className={cn("size-1.5 rounded-full", status.dotClassName)}
               />
-              {project.status === "operational" ? "Active" : "Down"}
+              {status.shortLabel}
             </div>
           </div>
 

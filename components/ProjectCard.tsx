@@ -1,6 +1,6 @@
 "use client";
 
-import { Project } from "@/lib/projects";
+import { Project, projectStatusConfig } from "@/lib/projects";
 import { cn } from "@/lib/utils";
 import {
   ArrowUpRight01Icon,
@@ -19,6 +19,8 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
+  const status = projectStatusConfig[project.status];
+
   // Generate a unique background based on project ID
   const getProjectBackground = (id: string) => {
     const seed = parseInt(id) || 0;
@@ -75,16 +77,9 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           {/* Status Badge */}
           <div className="flex items-center gap-2 rounded-full border border-border px-2.5 py-1 text-[10px] font-medium tracking-wide uppercase">
             <span
-              className={cn(
-                "size-1.5 rounded-full",
-                project.status === "operational"
-                  ? "bg-green-500 animate-status-pulse"
-                  : "bg-red-500",
-              )}
+              className={cn("size-1.5 rounded-full", status.dotClassName)}
             />
-            {project.status === "operational"
-              ? "All systems operational"
-              : "Out of service"}
+            {status.label}
           </div>
         </div>
 

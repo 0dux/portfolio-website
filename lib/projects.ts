@@ -5,7 +5,7 @@ export interface Project {
   title: string;
   description: string;
   progress: "completed" | "in progress" | "incomplete";
-  status: "operational" | "out of service";
+  status: "operational" | "out of service" | "gemini credits exhausted";
   techStack: string[];
   image: string;
   links: {
@@ -15,6 +15,31 @@ export interface Project {
   };
 }
 
+export const projectStatusConfig: Record<
+  Project["status"],
+  {
+    label: string;
+    shortLabel: string;
+    dotClassName: string;
+  }
+> = {
+  operational: {
+    label: "All systems operational",
+    shortLabel: "Active",
+    dotClassName: "bg-green-500 animate-status-pulse",
+  },
+  "out of service": {
+    label: "Out of service",
+    shortLabel: "Down",
+    dotClassName: "bg-red-500",
+  },
+  "gemini credits exhausted": {
+    label: "Gemini credits exhausted",
+    shortLabel: "Credits exhausted",
+    dotClassName: "bg-amber-500",
+  },
+};
+
 export const projects: Project[] = [
   {
     id: "1",
@@ -22,7 +47,7 @@ export const projects: Project[] = [
     description:
       "An AI-powered YouTube thumbnail generator where users pick a style, aspect ratio, and color palette to generate professional thumbnails using Google Gemini AI. Features Google OAuth, a credits system, and a community gallery.",
     progress: "completed",
-    status: "operational",
+    status: "gemini credits exhausted",
     techStack: [
       "Next.js",
       "TypeScript",
@@ -79,7 +104,7 @@ export const projectsDetailed: Project[] = [
     description:
       "An AI-powered YouTube thumbnail generator for content creators. Enter a video title, select a style, aspect ratio, and color palette to generate professional thumbnails using Google Gemini AI. Features Google OAuth 2.0, a credits system, save & manage generations, and a community gallery.",
     progress: "completed",
-    status: "operational",
+    status: "gemini credits exhausted",
     techStack: [
       "Next.js",
       "React",
