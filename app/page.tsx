@@ -5,7 +5,7 @@ import Hero from "@/sections/Hero";
 import Projects from "@/sections/Projects";
 import TechStack from "@/sections/TechStack";
 
-const page = () => {
+const page = async () => {
   return (
     <Container>
       <Hero />
