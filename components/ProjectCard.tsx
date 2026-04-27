@@ -60,9 +60,9 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             src={project.image}
             alt={project.title}
             fill
-            quality={100}
+            quality={80}
             className="object-cover rounded-xl shadow-2xl"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+            sizes="(max-width: 768px) 100vw, 450px"
           />
         </motion.div>
       </div>

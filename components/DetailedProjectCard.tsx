@@ -39,7 +39,6 @@ const DetailedProjectCard = ({ project, index }: DetailedProjectCardProps) => {
     ? getYouTubeEmbedUrl(project.links.demo)
     : null;
 
-  console.log(status);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -135,7 +134,7 @@ const DetailedProjectCard = ({ project, index }: DetailedProjectCardProps) => {
                       src={project.image}
                       alt={project.title}
                       fill
-                      quality={100}
+                      quality={80}
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />

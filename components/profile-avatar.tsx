@@ -1,6 +1,5 @@
 "use client";
 
-import confetti from "canvas-confetti";
 import { motion } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -17,7 +16,7 @@ export default function ProfileAvatar({
 }: ProfileAvatarProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+  const handleClick = async (event: React.MouseEvent<HTMLDivElement>) => {
     if (isFlipped) return;
 
     setIsFlipped(true);
@@ -25,6 +24,9 @@ export default function ProfileAvatar({
     const rect = event.currentTarget.getBoundingClientRect();
     const x = rect.left + rect.width / 2;
     const y = rect.top + rect.height / 2;
+
+    // Lazy-load confetti only when needed
+    const confetti = (await import("canvas-confetti")).default;
 
     // Trigger confetti exactly from the avatar's position
     confetti({

@@ -1,8 +1,16 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
+
+import type { LottieRefCurrentProps } from "lottie-react";
+
+// Lazy-load lottie-react to avoid 119 KiB in the initial bundle
+const Lottie = dynamic(() => import("lottie-react"), {
+  ssr: false,
+  loading: () => <div style={{ width: "100%", height: "100%" }} />,
+});
 
 interface LottieIconProps {
   className?: string;
