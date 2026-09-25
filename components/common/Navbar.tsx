@@ -6,7 +6,7 @@ import Container from "./Container";
 import fileData from "../../lottie/file.json";
 import folderData from "../../lottie/folder.json";
 import GithubStars from "../github-stars";
-import { ModeToggle as Themetoggle } from "../toggle-theme";
+import { ThemeToggle } from "../toggle-theme";
 import LottieIcon from "./LottieIcon";
 
 interface IconProps {
@@ -73,7 +73,7 @@ const Navbar = () => {
           <React.Suspense fallback={<div className="w-10 h-5" />}>
             <GithubStars />
           </React.Suspense>
-          <Themetoggle />
+          <ThemeToggle />
         </div>
       </Container>
     </nav>
