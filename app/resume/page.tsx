@@ -7,9 +7,9 @@ import Link from "next/link";
 
 const ResumePage = () => {
   const RESUME_URL =
-    "https://drive.google.com/file/d/15ghKt3d_td4UjhNZv0WrPDLqDeStqXRN/preview";
+    "https://drive.google.com/file/d/1gR5nF-9MYt-d-Kgll_r47HFtV-fDh7SN/preview";
   const DOWNLOAD_URL =
-    "https://drive.google.com/file/d/15ghKt3d_td4UjhNZv0WrPDLqDeStqXRN/view?usp=sharing";
+    "https://drive.google.com/file/d/1gR5nF-9MYt-d-Kgll_r47HFtV-fDh7SN/view?usp=sharing";
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">

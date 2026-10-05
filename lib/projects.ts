@@ -58,7 +58,7 @@ export const projects: Project[] = [
     image: ProjectAssets.frame_gen,
     links: {
       github: "https://github.com/0dux/FrameGen",
-      live: "https://frame-gen.dxksh.tech",
+      live: "https://frame-gen.dxksh.me",
     },
   },
   {
@@ -78,7 +78,7 @@ export const projects: Project[] = [
     image: ProjectAssets.flux,
     links: {
       github: "https://github.com/0dux/Flux-Website-Builder",
-      live: "https://flux.dxksh.tech",
+      live: "https://flux.dxksh.me",
     },
   },
   {
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     image: ProjectAssets.whispry,
     links: {
       github: "https://github.com/0dux/Whispry",
-      live: "https://whispry.dxksh.tech",
+      live: "https://whispry.dxksh.me",
     },
   },
 ];
@@ -120,7 +120,7 @@ export const projectsDetailed: Project[] = [
     image: ProjectAssets.frame_gen,
     links: {
       github: "https://github.com/0dux/FrameGen",
-      live: "https://frame-gen.dxksh.tech",
+      live: "https://frame-gen.dxksh.me",
       demo: "https://www.youtube.com/embed/lXogiTmWDvY?si=sF9zVXSI1MVI9AHz",
     },
   },
@@ -146,7 +146,7 @@ export const projectsDetailed: Project[] = [
     image: ProjectAssets.flux,
     links: {
       github: "https://github.com/0dux/Flux-Website-Builder",
-      live: "https://flux.dxksh.tech",
+      live: "https://flux.dxksh.me",
       demo: "https://www.youtube.com/embed/HOjH3C0DaaQ?si=B2R4G7uyGvOqpBdW",
     },
   },
@@ -175,7 +175,7 @@ export const projectsDetailed: Project[] = [
     image: ProjectAssets.whispry,
     links: {
       github: "https://github.com/0dux/Whispry",
-      live: "https://whispry.dxksh.tech",
+      live: "https://whispry.dxksh.me",
       demo: "https://www.youtube.com/embed/vFP2gQr6Gvg?si=W--l4WxxQfR1KmR_",
     },
   },
